@@ -60,6 +60,7 @@ public class MainApp {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+                        break;
                     }
                     case "4": {
                         try {
@@ -67,6 +68,7 @@ public class MainApp {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+                        break;
                     }
                 }
             }
@@ -124,7 +126,7 @@ public class MainApp {
                 switch (jobMenuChoice){
                     case "1": {
                         try {
-                            jobOperations.createNewRow();
+                            jobOperations.getListOfRows();
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
@@ -132,7 +134,7 @@ public class MainApp {
                     }
                     case "2": {
                         try {
-                            jobOperations.getListOfRows();
+                            jobOperations.createNewRow();
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
@@ -167,7 +169,7 @@ public class MainApp {
                 switch (companyMenuChoice){
                     case "1": {
                         try {
-                            companyOperations.createNewRow();
+                            companyOperations.getListOfRows();
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
@@ -175,7 +177,7 @@ public class MainApp {
                     }
                     case "2": {
                         try {
-                            companyOperations.getListOfRows();
+                            companyOperations.createNewRow();
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }

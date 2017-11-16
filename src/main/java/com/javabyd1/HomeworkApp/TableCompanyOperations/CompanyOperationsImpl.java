@@ -133,7 +133,6 @@ public class CompanyOperationsImpl implements TableOperations {
         while (resultQuerySet.next()) {
             int id = resultQuerySet.getInt("id_firmy");
             String street = resultQuerySet.getString("ulica");
-            String postalCode = resultQuerySet.getString("kod_pocztowy");
             String houseNumber = resultQuerySet.getString("numer_domu");
             String apartmentNumber = resultQuerySet.getString("numer_mieszkania");
             String companyName = resultQuerySet.getString("nazwa");
@@ -142,7 +141,6 @@ public class CompanyOperationsImpl implements TableOperations {
             System.out.println("ID firmy: " + id);
             System.out.println("Nazwa firmy: " + companyName);
             System.out.println("Ulica: " + street);
-            System.out.println("Kod pocztowy: " + postalCode);
             System.out.println("Numer domu: " + houseNumber);
             System.out.println("Numer mieszkania: " + apartmentNumber);
             System.out.println("NIP: " + NIPNumber);
