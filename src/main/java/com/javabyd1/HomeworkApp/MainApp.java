@@ -79,17 +79,17 @@ public class MainApp {
                 String employersMenuChoice = scanner.nextLine();
 
                 switch (employersMenuChoice) {
-                    case "2": {
+                    case "1": {
                         try {
-                            employeesOperations.createNewRow();
+                            employeesOperations.getListOfRows();
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
                         break;
                     }
-                    case "1": {
+                    case "2": {
                         try {
-                            employeesOperations.getListOfRows();
+                            employeesOperations.createNewRow();
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
@@ -121,16 +121,32 @@ public class MainApp {
 
                 switch (jobMenuChoice){
                     case "1": {
-                        jobOperations.createNewRow();
+                        try {
+                            jobOperations.createNewRow();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
                     }
                     case "2": {
-                        jobOperations.getListOfRows();
+                        try {
+                            jobOperations.getListOfRows();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
                     }
                     case "3": {
-                        jobOperations.deleteRow();
+                        try {
+                            jobOperations.deleteRow();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
                     }
                     case "4": {
-                        jobOperations.updateRow();
+                        try {
+                            jobOperations.updateRow();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }

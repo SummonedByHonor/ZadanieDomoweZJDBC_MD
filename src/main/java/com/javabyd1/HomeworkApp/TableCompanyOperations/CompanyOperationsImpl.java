@@ -48,10 +48,10 @@ public class CompanyOperationsImpl implements TableOperations {
         sql = "INSERT INTO firmy (id_firmy, nazwa, ulica, numer_domu, numer_mieszkania, nip)" + "VALUES (" + companyIdGivenValue +
                 ", '" + companyNameGivenValue + "', '" + street + "', '" + houseNumber + "', '" + apartamentNumber + "', '" +
                 NIPGivenValue + "')";
-        ResultSet resultSet = statement.executeQuery(sql);
-        System.out.println(resultSet);
+        Integer newRecord = statement.executeUpdate(sql);
         statement.close();
         connection.close();
+        System.out.println("Dodano rekord o id " + companyIdGivenValue + " do bazy");
     }
 
     @Override
@@ -76,7 +76,7 @@ public class CompanyOperationsImpl implements TableOperations {
         System.out.println("1. Aktualizacja nazwy firmy.");
         System.out.println("2. Aktualizacja adresu firmy.");
         System.out.println("3. Aktualizacja nazwy i adresu firmy.");
-        System.out.println("4. Wstecz.");
+//        System.out.println("4. Wstecz.");
         String choosenOptionOfUpdate = scanner.nextLine();
         switch (choosenOptionOfUpdate) {
             case "1": {
@@ -84,6 +84,7 @@ public class CompanyOperationsImpl implements TableOperations {
                 String companyNameGivenValue = scanner.nextLine();
                 sql = "UPDATE firmy SET nazwa = '" + companyNameGivenValue + "' WHERE id_firmy = " + chosenIdToUpdate;
                 Integer companyNameUptade = statement.executeUpdate(sql);
+                System.out.println("POWIADOMIENIE: Uaktualniono firmę o id " + chosenIdToUpdate);
                 break;
             }
             case "2": {
@@ -97,6 +98,7 @@ public class CompanyOperationsImpl implements TableOperations {
                 sql = "UPDATE firmy SET ulica = '" + street + "', numer_domu = '" + houseNumber + "', numer_mieszkania = '" +
                         apartamentNumber + "' WHERE id_firmy = " + chosenIdToUpdate;
                 Integer companyAdressUpdate = statement.executeUpdate(sql);
+                System.out.println("POWIADOMIENIE: Uaktualniono firmę o id " + chosenIdToUpdate);
                 break;
             }
             case "3": {
@@ -112,12 +114,15 @@ public class CompanyOperationsImpl implements TableOperations {
                 sql = "UPDATE firmy SET nazwa = '" + companyNameGivenValue + "', ulica = '" + street + "', numer_domu = '" + houseNumber + "', numer_mieszkania = '" +
                         apartamentNumber + "' WHERE id_firmy = " + chosenIdToUpdate;
                 Integer companyNameAndAdressUptade = statement.executeUpdate(sql);
+                System.out.println("POWIADOMIENIE: Uaktualniono firmę o id " + chosenIdToUpdate);
                 break;
             }
             case "4": {
 
             }
         }
+        statement.close();
+        connection.close();
     }
 
     @Override
@@ -134,7 +139,7 @@ public class CompanyOperationsImpl implements TableOperations {
             String companyName = resultQuerySet.getString("nazwa");
             String NIPNumber = resultQuerySet.getString("nip");
 
-            System.out.println("ID: " + id);
+            System.out.println("ID firmy: " + id);
             System.out.println("Nazwa firmy: " + companyName);
             System.out.println("Ulica: " + street);
             System.out.println("Kod pocztowy: " + postalCode);

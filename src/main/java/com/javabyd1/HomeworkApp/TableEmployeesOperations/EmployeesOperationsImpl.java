@@ -29,7 +29,7 @@ public class EmployeesOperationsImpl implements TableOperations {
     @Override
     public void createNewRow() throws SQLException {
         Statement statement = getStatement();
-        System.out.println("DODAJ ADRES:");
+        System.out.println("DODAJ PRACOWNIKA:");
         System.out.println("Podaj id nowego pracownika:");
         Integer newEmployerId = scanner.nextInt();
         scanner.nextLine();
@@ -67,7 +67,7 @@ public class EmployeesOperationsImpl implements TableOperations {
                 PESELnumber + "', " + dateOfBirthGivenValue + ", " + newEmployerJobId + ", " + newEmployerSalary +
                 ", " + newEmployerCompanyId + ")";
 
-        ResultSet resultSet = statement.executeQuery(sql);
+        Integer newRecord = statement.executeUpdate(sql);
         statement.close();
         connection.close();
     }
