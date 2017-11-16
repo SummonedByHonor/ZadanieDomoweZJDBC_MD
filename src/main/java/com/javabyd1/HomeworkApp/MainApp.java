@@ -101,6 +101,7 @@ public class MainApp {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+                        break;
                     }
                     case "4": {
                         try {
@@ -108,6 +109,7 @@ public class MainApp {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+                        break;
                     }
                 }
             }
@@ -126,6 +128,7 @@ public class MainApp {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+                        break;
                     }
                     case "2": {
                         try {
@@ -133,6 +136,7 @@ public class MainApp {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+                        break;
                     }
                     case "3": {
                         try {
@@ -140,6 +144,7 @@ public class MainApp {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+                        break;
                     }
                     case "4": {
                         try {
@@ -147,6 +152,7 @@ public class MainApp {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+                        break;
                     }
                 }
             }
@@ -165,6 +171,7 @@ public class MainApp {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+                        break;
                     }
                     case "2": {
                         try {
@@ -172,6 +179,7 @@ public class MainApp {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+                        break;
                     }
                     case "3": {
                         try {
@@ -179,6 +187,7 @@ public class MainApp {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+                        break;
                     }
                     case "4": {
                         try {
@@ -186,6 +195,7 @@ public class MainApp {
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+                        break;
                     }
                 }
             }

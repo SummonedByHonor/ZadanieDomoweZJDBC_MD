@@ -44,7 +44,7 @@ public class EmployeesOperationsImpl implements TableOperations {
         System.out.println("Podaj płeć nowego pracownika:");
         scannerChar.useDelimiter("");
         String newEmployerSesGivenValue = scannerChar.nextLine();
-        System.out.println("Podaj datę urodzin nowego pracownika (format DD-MM-YYYY:");
+        System.out.println("Podaj datę urodzin nowego pracownika (format YYYY-MM-DD:");
         Date dateOfBirthGivenValue = Date.valueOf(scanner.nextLine());
         System.out.println("Podaj telefon kontaktowy:");
         String telephoneNumberGivenValue = scanner.nextLine();
